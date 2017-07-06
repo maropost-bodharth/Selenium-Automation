@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="tests.MaropostEmailCampaignsTestCases">
+        <methods>
+          <include name="test_click_on_new_campaign_schedule_recurring"/>
+          <include name="test_click_on_new_campaign_schedule_priority_without_Date"/>
+          <include name="test_click_on_new_AB_campaign"/>
+          <include name="test_click_on_new_campaign_schedule_priority"/>
+          <include name="test_verify_signin_section"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.MaropostEmailCampaignsTestCases -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

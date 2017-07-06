@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="1126642" started-at="2017-07-05T13:36:35Z" finished-at="2017-07-05T13:55:21Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="1126642" started-at="2017-07-05T13:36:35Z" finished-at="2017-07-05T13:55:21Z">
+      <class name="tests.MaropostEmailCampaignsTestCases">
+        <test-method status="PASS" signature="setup()[pri:0, instance:tests.MaropostEmailCampaignsTestCases@448ff1a8]" name="setup" is-config="true" duration-ms="10940" started-at="2017-07-05T19:06:24Z" finished-at="2017-07-05T19:06:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="test_verify_signin_section()[pri:0, instance:tests.MaropostEmailCampaignsTestCases@448ff1a8]" name="test_verify_signin_section" duration-ms="48683" started-at="2017-07-05T19:06:35Z" finished-at="2017-07-05T19:07:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_verify_signin_section -->
+        <test-method status="PASS" signature="test_click_on_new_campaign_schedule_recurring()[pri:0, instance:tests.MaropostEmailCampaignsTestCases@448ff1a8]" name="test_click_on_new_campaign_schedule_recurring" duration-ms="126160" started-at="2017-07-05T19:07:23Z" depends-on-methods="tests.MaropostEmailCampaignsTestCases.test_verify_signin_section" finished-at="2017-07-05T19:09:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_click_on_new_campaign_schedule_recurring -->
+        <test-method status="PASS" signature="test_click_on_new_campaign_schedule_priority()[pri:0, instance:tests.MaropostEmailCampaignsTestCases@448ff1a8]" name="test_click_on_new_campaign_schedule_priority" duration-ms="151024" started-at="2017-07-05T19:09:30Z" depends-on-methods="tests.MaropostEmailCampaignsTestCases.test_click_on_new_campaign_schedule_recurring" finished-at="2017-07-05T19:12:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_click_on_new_campaign_schedule_priority -->
+        <test-method status="PASS" signature="test_click_on_new_campaign_schedule_priority_without_Date()[pri:0, instance:tests.MaropostEmailCampaignsTestCases@448ff1a8]" name="test_click_on_new_campaign_schedule_priority_without_Date" duration-ms="186028" started-at="2017-07-05T19:12:01Z" depends-on-methods="tests.MaropostEmailCampaignsTestCases.test_click_on_new_campaign_schedule_priority" finished-at="2017-07-05T19:15:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_click_on_new_campaign_schedule_priority_without_Date -->
+        <test-method status="PASS" signature="test_click_on_new_AB_campaign()[pri:0, instance:tests.MaropostEmailCampaignsTestCases@448ff1a8]" name="test_click_on_new_AB_campaign" duration-ms="614728" started-at="2017-07-05T19:15:07Z" depends-on-methods="tests.MaropostEmailCampaignsTestCases.test_click_on_new_campaign_schedule_priority_without_Date" finished-at="2017-07-05T19:25:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_click_on_new_AB_campaign -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.MaropostEmailCampaignsTestCases@448ff1a8]" name="tearDown" is-config="true" duration-ms="479" started-at="2017-07-05T19:25:26Z" finished-at="2017-07-05T19:25:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.MaropostEmailCampaignsTestCases -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
