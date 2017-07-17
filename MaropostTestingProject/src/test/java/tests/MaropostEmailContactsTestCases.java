@@ -79,7 +79,7 @@ public class MaropostEmailContactsTestCases {
         }
 	}
     
-    // Test Case - 2 : Create New List
+    // Test Case - 2 : Create New Contacts List
     
     @Test (dependsOnMethods = "test_verify_signin_section")
         
@@ -97,10 +97,46 @@ public class MaropostEmailContactsTestCases {
             
         Thread.sleep(2000);
      }
-		
-	// Test Case - 3 : Create New Field
+	
+	// Test Case - 3 : To Edit Contacts List
     
     @Test (dependsOnMethods = "test_create_new_contacts_list")
+        
+    public void test_to_edit_contacts_list() throws InterruptedException{
+            
+    	maroposttest = extentreports.startTest("test_to_edit_contacts_list");
+        	
+        objLogin.clickEditContactsListOption();
+        	
+        maroposttest.log(LogStatus.INFO, "Click on edit option under contacts list");
+          
+        maroposttest.log(LogStatus.INFO, "Contact List was updated successfully");
+        
+        Thread.sleep(2000);
+     }
+    
+	// Test Case - 4 : To Delete Contacts List
+    
+    @Test (dependsOnMethods = "test_to_edit_contacts_list")
+        
+    public void test_to_delete_contacts_list() throws InterruptedException{
+            
+    	maroposttest = extentreports.startTest("test_to_delete_contacts_list");
+        	
+        objLogin.clickDeleteContactsListOption();
+        	
+        maroposttest.log(LogStatus.INFO, "Click on delete option under contacts list");
+            
+        maroposttest.log(LogStatus.INFO, "Click on confirm delete option");
+     
+        maroposttest.log(LogStatus.INFO, "Contacts list was deleted successfully");
+        
+        Thread.sleep(2000);
+     }
+     	
+	// Test Case - 5 : Create New Contacts Field
+    
+    @Test (dependsOnMethods = "test_to_delete_contacts_list")
         
     public void test_create_new_contacts_field() throws InterruptedException{
             
@@ -117,7 +153,7 @@ public class MaropostEmailContactsTestCases {
         Thread.sleep(2000);
      }
     
-    // Test Case - 4 : Create New Tag
+    // Test Case - 6 : Create New Contacts Tag
     
     @Test (dependsOnMethods = "test_create_new_contacts_field")
         
@@ -135,10 +171,29 @@ public class MaropostEmailContactsTestCases {
             
         Thread.sleep(2000);
      }
-    
-    // Test Case - 5 : Create New Brand
+
+    // Test Case - 7 : To Delete Contacts Tag
     
     @Test (dependsOnMethods = "test_create_new_contacts_tag")
+        
+    public void test_to_delete_contacts_tag() throws InterruptedException{
+            
+    	maroposttest = extentreports.startTest("test_to_delete_contacts_tag");
+        	
+        objLogin.clickDeleteContactsTagOption();
+        	
+        maroposttest.log(LogStatus.INFO, "Click on delete option under contacts tag");
+            
+        maroposttest.log(LogStatus.INFO, "Click on confirm delete option");
+     
+        maroposttest.log(LogStatus.INFO, "Contacts tag was deleted successfully");
+        
+        Thread.sleep(2000);
+     }
+    
+    // Test Case - 8 : Create New Contacts Brand
+    
+    @Test (dependsOnMethods = "test_to_delete_contacts_tag")
         
     public void test_create_new_contacts_brand() throws InterruptedException{
             
@@ -155,9 +210,26 @@ public class MaropostEmailContactsTestCases {
         Thread.sleep(2000);
      }
     
-    // Test Case - 6 : Create New Secure List
+    // Test Case - 9 : To Edit Contacts Brand
     
     @Test (dependsOnMethods = "test_create_new_contacts_brand")
+        
+    public void test_to_edit_contacts_brand() throws InterruptedException{
+            
+    	maroposttest = extentreports.startTest("test_to_edit_contacts_brand");
+        	
+        objLogin.clickEditContactsBrandOption();
+        	
+        maroposttest.log(LogStatus.INFO, "Click on edit option under contacts brand");
+          
+        maroposttest.log(LogStatus.INFO, "Contacts brand was updated successfully");
+        
+        Thread.sleep(2000);
+     }
+    
+    // Test Case - 10 : Create New Contacts Secure List
+    
+    @Test (dependsOnMethods = "test_to_edit_contacts_brand")
         
     public void test_create_new_contacts_secure_list() throws InterruptedException{
             
@@ -174,9 +246,45 @@ public class MaropostEmailContactsTestCases {
         Thread.sleep(2000);
      }
     
-    // Test Case - 7 : Create New Table
+    // Test Case - 11 : To Edit Contacts Secure List
     
-    @Test (dependsOnMethods = "test_create_new_contacts_brand")
+    @Test (dependsOnMethods = "test_create_new_contacts_secure_list")
+        
+    public void test_to_edit_contacts_secure_list() throws InterruptedException{
+            
+    	maroposttest = extentreports.startTest("test_to_edit_contacts_secure_list");
+        	
+        objLogin.clickEditContactsSecureListOption();
+        	
+        maroposttest.log(LogStatus.INFO, "Click on edit option under contacts secure list");
+          
+        maroposttest.log(LogStatus.INFO, "Contacts secure List was updated successfully");
+        
+        Thread.sleep(2000);
+     }
+    
+    // Test Case - 12 : To Delete Contacts Secure List
+    
+    @Test (dependsOnMethods = "test_to_edit_contacts_secure_list")
+        
+    public void test_to_delete_contacts_securelist() throws InterruptedException{
+            
+    	maroposttest = extentreports.startTest("test_to_delete_contacts_secure_list");
+        	
+        objLogin.clickDeleteContactsSecureListOption();
+        	
+        maroposttest.log(LogStatus.INFO, "Click on delete option under contacts secure list");
+            
+        maroposttest.log(LogStatus.INFO, "Click on confirm delete option");
+     
+        maroposttest.log(LogStatus.INFO, "Contacts secure list was deleted successfully");
+        
+        Thread.sleep(2000);
+     }
+    
+    // Test Case - 13 : Create New Contacts Table
+    
+    @Test (dependsOnMethods = "test_to_edit_contacts_secure_list")
         
     public void test_create_new_contacts_table() throws InterruptedException{
             
@@ -197,9 +305,45 @@ public class MaropostEmailContactsTestCases {
         Thread.sleep(2000);
      }
     
-    // Test Case - 8 : Create New SQL Query
+    // Test Case - 14 : To Edit Contacts Table
     
-    @Test (dependsOnMethods = "test_create_new_contacts_brand")
+    @Test (dependsOnMethods = "test_create_new_contacts_table")
+        
+    public void test_to_edit_contacts_table() throws InterruptedException{
+            
+    	maroposttest = extentreports.startTest("test_to_edit_contacts_table");
+        	
+        objLogin.clickEditContactsTableOption();
+        	
+        maroposttest.log(LogStatus.INFO, "Click on edit option under contacts table");
+          
+        maroposttest.log(LogStatus.INFO, "Contacts table was updated successfully");
+        
+        Thread.sleep(2000);
+     }
+    
+    // Test Case - 15 : To Delete Contacts Table
+    
+    @Test (dependsOnMethods = "test_to_edit_contacts_table")
+        
+    public void test_to_delete_contacts_table() throws InterruptedException{
+            
+    	maroposttest = extentreports.startTest("test_to_delete_contacts_table");
+        	
+        objLogin.clickDeleteContactsTableOption();
+        	
+        maroposttest.log(LogStatus.INFO, "Click on delete option under contacts table");
+            
+        maroposttest.log(LogStatus.INFO, "Click on confirm delete option");
+     
+        maroposttest.log(LogStatus.INFO, "Contacts table was deleted successfully");
+        
+        Thread.sleep(2000);
+     }
+    
+    // Test Case - 16 : Create New Contacts SQL Query
+    
+    @Test (dependsOnMethods = "test_to_delete_contacts_table")
         
     public void test_create_new_contacts_sqlquery() throws InterruptedException{
             
@@ -220,9 +364,45 @@ public class MaropostEmailContactsTestCases {
         Thread.sleep(2000);
      }
     
-    // Test Case - 9 : Create New Preference Page
+    // Test Case - 17 : To Edit Contacts SQL Query
     
-    @Test (dependsOnMethods = "test_create_new_contacts_brand")
+    @Test (dependsOnMethods = "test_create_new_contacts_sqlquery")
+        
+    public void test_to_edit_contacts_sql_query() throws InterruptedException{
+            
+    	maroposttest = extentreports.startTest("test_to_edit_contacts_sql_query");
+        	
+        objLogin.clickEditContactsSQLQueryOption();
+        	
+        maroposttest.log(LogStatus.INFO, "Click on edit option under contacts sql query");
+          
+        maroposttest.log(LogStatus.INFO, "Contacts Sql Query was updated successfully");
+        
+        Thread.sleep(2000);
+     }
+    
+    // Test Case - 18 : To Delete Contacts SQL Query
+    
+    @Test (dependsOnMethods = "test_to_edit_contacts_sql_query")
+        
+    public void test_to_delete_contacts_sql_query() throws InterruptedException{
+            
+    	maroposttest = extentreports.startTest("test_to_delete_contacts_sql_query");
+        	
+        objLogin.clickDeleteContactsSQLQueryOption();
+        	
+        maroposttest.log(LogStatus.INFO, "Click on delete option under contacts sql query");
+            
+        maroposttest.log(LogStatus.INFO, "Click on confirm delete option");
+     
+        maroposttest.log(LogStatus.INFO, "Contacts sql query was deleted successfully");
+        
+        Thread.sleep(2000);
+     }
+    
+    // Test Case - 19 : Create New Preference Page
+    
+    @Test (dependsOnMethods = "test_to_delete_contacts_sql_query")
         
     public void test_create_new_contacts_preference_page() throws InterruptedException{
             
@@ -239,21 +419,79 @@ public class MaropostEmailContactsTestCases {
         Thread.sleep(2000);
      }
   
-    // Test Case - 10 : To Edit List
+    // Test Case - 20 : To Edit Contacts Preference Page
     
     @Test (dependsOnMethods = "test_create_new_contacts_preference_page")
         
-    public void test_to_edit_contacts_list() throws InterruptedException{
+    public void test_to_edit_contacts_preference_page() throws InterruptedException{
             
-    	maroposttest = extentreports.startTest("test_to_edit_contacts_list");
+    	maroposttest = extentreports.startTest("test_to_edit_contacts_preference_page");
         	
-        objLogin.clickEditContactsListOption();
+        objLogin.clickEditContactsPreferencePageOption();
         	
-        maroposttest.log(LogStatus.INFO, "Click on edit option under contacts list");
-            
+        maroposttest.log(LogStatus.INFO, "Click on edit option under contacts preference page");
+          
+        maroposttest.log(LogStatus.INFO, "Contacts Preference Page was updated successfully");
+        
         Thread.sleep(2000);
      }
     
+    // Test Case - 21 : To Delete Contacts Preference Page
+    
+    @Test (dependsOnMethods = "test_to_edit_contacts_preference_page")
+        
+    public void test_to_delete_contacts_preference_page() throws InterruptedException{
+            
+    	maroposttest = extentreports.startTest("test_to_delete_contacts_preference_page");
+        	
+        objLogin.clickDeleteContactsPreferencePageOption();
+        	
+        maroposttest.log(LogStatus.INFO, "Click on delete option under contacts preference page");
+            
+        maroposttest.log(LogStatus.INFO, "Click on confirm delete option");
+     
+        maroposttest.log(LogStatus.INFO, "Contact preference page was deleted successfully");
+        
+        Thread.sleep(2000);
+     }
+    
+ /*
+  	// Test Case - 6 : To Edit Contacts Field
+    
+    @Test (dependsOnMethods = "test_create_new_contacts_field")
+        
+    public void test_to_edit_contacts_field() throws InterruptedException{
+            
+    	maroposttest = extentreports.startTest("test_to_edit_contacts_field");
+        	
+        objLogin.clickEditContactsListOption();
+        	
+        maroposttest.log(LogStatus.INFO, "Click on edit option under contacts field");
+          
+        maroposttest.log(LogStatus.INFO, "Contacts field was updated successfully");
+        
+        Thread.sleep(2000);
+     }
+    
+    // Test Case - 7 : To Delete Contacts Field
+    
+    @Test (dependsOnMethods = "test_to_edit_contacts_field")
+        
+    public void test_to_delete_contacts_field() throws InterruptedException{
+            
+    	maroposttest = extentreports.startTest("test_to_delete_contacts_field");
+        	
+        objLogin.clickDeleteContactsListOption();
+        	
+        maroposttest.log(LogStatus.INFO, "Click on delete option under contacts field");
+            
+        maroposttest.log(LogStatus.INFO, "Click on confirm delete option");
+     
+        maroposttest.log(LogStatus.INFO, "Contacts field was deleted successfully");
+        
+        Thread.sleep(2000);
+     } 
+  */
     @AfterSuite (alwaysRun = true)
     
     public void tearDown() throws Exception {

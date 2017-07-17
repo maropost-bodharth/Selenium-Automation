@@ -95,7 +95,7 @@ public class MaropostEmailContactsPage {
     	
     	WebElement listName = driver.findElement(By.id("list_name"));
         
-        listName.sendKeys("Automation_List");
+        listName.sendKeys("Automation_List_100");
     	
     	Thread.sleep(2000);
     	
@@ -134,7 +134,7 @@ public class MaropostEmailContactsPage {
     	
     	WebElement fieldName = driver.findElement(By.id("custom_field_name"));
         
-        fieldName.sendKeys("Automation_Field");
+        fieldName.sendKeys("Automation_Field_100");
     	
     	Thread.sleep(2000);
     	
@@ -169,7 +169,7 @@ public class MaropostEmailContactsPage {
     	
     	WebElement tagName = driver.findElement(By.id("tag_name"));
         
-        tagName.sendKeys("Automation_Tag");
+        tagName.sendKeys("Automation_Tag_100");
     	
     	Thread.sleep(2000);
     	
@@ -204,7 +204,7 @@ public class MaropostEmailContactsPage {
     	
     	WebElement brandName = driver.findElement(By.id("brand_name"));
         
-        brandName.sendKeys("Automation_Brand");
+        brandName.sendKeys("Automation_Brand_100");
     	
     	Thread.sleep(2000);
     	
@@ -239,7 +239,7 @@ public class MaropostEmailContactsPage {
     	
     	WebElement secureListName = driver.findElement(By.id("secure_list_name"));
         
-        secureListName.sendKeys("Automation_Secure_List");
+        secureListName.sendKeys("Automation_Secure_List_00");
     	
     	Thread.sleep(2000);
     	
@@ -270,7 +270,7 @@ public class MaropostEmailContactsPage {
     	
     	WebElement tableName = driver.findElement(By.id("relational_table_name"));
         
-        tableName.sendKeys("automationtable");
+        tableName.sendKeys("automationtable00");
     	
     	Thread.sleep(2000);
     	
@@ -309,7 +309,7 @@ public class MaropostEmailContactsPage {
     	
     	WebElement sqlQueryName = driver.findElement(By.id("relational_query_name"));
         
-        sqlQueryName.sendKeys("automationsql");
+        sqlQueryName.sendKeys("automationsql00");
     	
     	Thread.sleep(2000);
     	
@@ -348,7 +348,7 @@ public class MaropostEmailContactsPage {
     	
     	WebElement preferencePageName = driver.findElement(By.id("preference_page_name"));
         
-    	preferencePageName.sendKeys("automationpreferencepage");
+    	preferencePageName.sendKeys("automationpreferencepage00");
     	
     	Thread.sleep(2000);
     	
@@ -390,8 +390,311 @@ public class MaropostEmailContactsPage {
     	driver.findElement(By.name("commit")).click();
     	
     	Thread.sleep(3000);
+    }
+    
+    public void clickEditContactsTableOption() throws InterruptedException{     
+        
+    	WebElement contacts = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div[1]/ul/li[2]/a"));
+        
+        Actions action = new Actions(driver);
+ 
+        action.moveToElement(contacts).build().perform();
+        
+    	WebElement tables = driver.findElement(By.linkText("Tables"));
+
+    	tables.click();
     	
+    	Thread.sleep(2000);
+	
+    	WebElement editTableRow = driver.findElement(By.cssSelector("a[title=\"Edit relational table\"]"));
+    	
+    	editTableRow.click();
+    	
+    	Thread.sleep(2000);
+    	
+    	WebElement tableEditPage = driver.findElement(By.id("relational_table_name"));
+        
+    	tableEditPage.clear();
+    	
+    	tableEditPage.sendKeys("tableedited");
+    	
+    	Thread.sleep(2000);
+    
+    	driver.findElement(By.name("commit")).click();
+    	
+    	Thread.sleep(3000);
     }
 
-}
+    public void clickEditContactsSQLQueryOption() throws InterruptedException{     
+        
+    	WebElement contacts = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div[1]/ul/li[2]/a"));
+        
+        Actions action = new Actions(driver);
+ 
+        action.moveToElement(contacts).build().perform();
+        
+    	WebElement query = driver.findElement(By.linkText("SQL Queries"));
 
+    	query.click();
+    	
+    	Thread.sleep(2000);
+	
+    	WebElement editQuery = driver.findElement(By.cssSelector("a[title=\"Edit query\"]"));
+    	
+    	editQuery.click();
+    	
+    	Thread.sleep(2000);
+    	
+    	WebElement queryEditPage = driver.findElement(By.id("relational_query_name"));
+        
+    	queryEditPage.clear();
+    	
+    	queryEditPage.sendKeys("queryedited");
+    	
+    	Thread.sleep(2000);
+    
+    	driver.findElement(By.name("commit")).click();
+    	
+    	Thread.sleep(3000);
+    }
+
+    public void clickEditContactsPreferencePageOption() throws InterruptedException{     
+        
+    	WebElement contacts = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div[1]/ul/li[2]/a"));
+        
+        Actions action = new Actions(driver);
+ 
+        action.moveToElement(contacts).build().perform();
+        
+    	WebElement preferencePage = driver.findElement(By.linkText("Preference Management"));
+
+    	preferencePage.click();
+    	
+    	Thread.sleep(2000);
+	
+    	WebElement editQuery = driver.findElement(By.cssSelector("a[title=\"Edit preference page.\"]"));
+    	
+    	editQuery.click();
+    	
+    	Thread.sleep(2000);
+    	
+    	WebElement preferenceEditPage = driver.findElement(By.id("preference_page_name"));
+        
+    	preferenceEditPage.clear();
+    	
+    	preferenceEditPage.sendKeys("pageedited");
+    	
+    	Thread.sleep(2000);
+    	
+    	JavascriptExecutor jse = (JavascriptExecutor) driver;
+    	
+        jse.executeScript("window.scrollBy(0,500)", "");
+    
+    	driver.findElement(By.name("commit")).click();
+    	
+    	Thread.sleep(3000);
+    }
+
+    public void clickEditContactsSecureListOption() throws InterruptedException{     
+        
+    	WebElement contacts = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div[1]/ul/li[2]/a"));
+        
+        Actions action = new Actions(driver);
+ 
+        action.moveToElement(contacts).build().perform();
+        
+    	WebElement secureListPage = driver.findElement(By.linkText("Secure Lists"));
+
+    	secureListPage.click();
+    	
+    	Thread.sleep(2000);
+	
+    	WebElement editSecureList = driver.findElement(By.cssSelector("a[title=\"Edit List\"]"));
+    	
+    	editSecureList.click();
+    	
+    	Thread.sleep(2000);
+    	
+    	WebElement editPage = driver.findElement(By.id("secure_list_name"));
+        
+    	editPage.clear();
+    	
+    	editPage.sendKeys("securelistedited");
+    	
+    	Thread.sleep(2000);
+    
+    	driver.findElement(By.name("commit")).click();
+    	
+    	Thread.sleep(3000);
+    }
+
+    public void clickEditContactsBrandOption() throws InterruptedException{     
+        
+    	WebElement contacts = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div[1]/ul/li[2]/a"));
+        
+        Actions action = new Actions(driver);
+ 
+        action.moveToElement(contacts).build().perform();
+        
+    	WebElement brandPage = driver.findElement(By.linkText("Brands"));
+
+    	brandPage.click();
+    	
+    	Thread.sleep(2000);
+	
+    	WebElement editBrandname = driver.findElement(By.cssSelector("a[title=\"Edit brand.\"]"));
+    	
+    	editBrandname.click();
+    	
+    	Thread.sleep(2000);
+    	
+    	driver.switchTo().activeElement();
+    	
+    	Thread.sleep(2000);
+    	
+    	WebElement editPage = driver.findElement(By.id("brand_name"));
+        
+    	editPage.clear();
+    	
+    	editPage.sendKeys("brandedited");
+    	
+    	Thread.sleep(2000);
+    
+    	driver.findElement(By.name("commit")).click();
+    	
+    	Thread.sleep(3000);
+    }
+ 
+    public void clickDeleteContactsListOption() throws InterruptedException{     
+        
+    	WebElement contacts = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div[1]/ul/li[2]/a"));
+        
+        contacts.click();
+    
+        Thread.sleep(2000);
+        
+    	WebElement deleteList = driver.findElement(By.cssSelector("a[title=\"Delete list permanently.\"]"));
+    	
+    	deleteList.click();
+    	
+    	driver.switchTo().alert().accept();
+    	
+    	Thread.sleep(2000);
+    }
+    
+    public void clickDeleteContactsTagOption() throws InterruptedException{     
+        
+    	WebElement contacts = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div[1]/ul/li[2]/a"));
+        
+        Actions action = new Actions(driver);
+ 
+        action.moveToElement(contacts).build().perform();
+        
+    	WebElement tables = driver.findElement(By.linkText("Tags"));
+
+    	tables.click();
+    	
+    	Thread.sleep(2000);
+	
+    	WebElement deleteTag = driver.findElement(By.cssSelector("a[title=\"Delete tag permanently\"]"));
+    	
+    	deleteTag.click();
+    	
+    	driver.switchTo().alert().accept();
+    	
+    	Thread.sleep(2000);
+    }
+
+    public void clickDeleteContactsTableOption() throws InterruptedException{     
+        
+    	WebElement contacts = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div[1]/ul/li[2]/a"));
+        
+        Actions action = new Actions(driver);
+ 
+        action.moveToElement(contacts).build().perform();
+        
+    	WebElement tables = driver.findElement(By.linkText("Tables"));
+
+    	tables.click();
+    	
+    	Thread.sleep(2000);
+	
+    	WebElement deleteTableRow = driver.findElement(By.cssSelector("a[title=\"Delete table permanently\"]"));
+    	
+    	deleteTableRow.click();
+    	
+    	driver.switchTo().alert().accept();
+    	
+    	Thread.sleep(2000);
+    }
+
+    public void clickDeleteContactsSQLQueryOption() throws InterruptedException{     
+        
+    	WebElement contacts = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div[1]/ul/li[2]/a"));
+        
+        Actions action = new Actions(driver);
+ 
+        action.moveToElement(contacts).build().perform();
+        
+    	WebElement query = driver.findElement(By.linkText("SQL Queries"));
+
+    	query.click();
+    	
+    	Thread.sleep(2000);
+    	
+    	WebElement deleteQuery = driver.findElement(By.cssSelector("a[title=\"Delete query permanently\"]"));
+    	
+    	deleteQuery.click();
+    	
+    	driver.switchTo().alert().accept();
+    	
+    	Thread.sleep(2000);
+    }
+
+    public void clickDeleteContactsPreferencePageOption() throws InterruptedException{     
+        
+    	WebElement contacts = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div[1]/ul/li[2]/a"));
+        
+        Actions action = new Actions(driver);
+ 
+        action.moveToElement(contacts).build().perform();
+        
+    	WebElement preferencePage = driver.findElement(By.linkText("Preference Management"));
+
+    	preferencePage.click();
+    	
+    	Thread.sleep(2000);
+    	
+    	WebElement deletePreferencePage = driver.findElement(By.cssSelector("a[title=\"Delete preference page permanently.\"]"));
+    	
+    	deletePreferencePage.click();
+    	
+    	driver.switchTo().alert().accept();
+    	
+    	Thread.sleep(2000);
+    }
+    
+    public void clickDeleteContactsSecureListOption() throws InterruptedException{     
+        
+    	WebElement contacts = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div[1]/ul/li[2]/a"));
+        
+        Actions action = new Actions(driver);
+ 
+        action.moveToElement(contacts).build().perform();
+        
+    	WebElement secureListPage = driver.findElement(By.linkText("Secure Lists"));
+
+    	secureListPage.click();
+    	
+    	Thread.sleep(2000);
+    	
+    	WebElement deleteSecureListPage = driver.findElement(By.cssSelector("a[title=\"Delete secure list permanently\"]"));
+    	
+    	deleteSecureListPage.click();
+    	
+    	driver.switchTo().alert().accept();
+    	
+    	Thread.sleep(2000);
+    }
+ 
+}
