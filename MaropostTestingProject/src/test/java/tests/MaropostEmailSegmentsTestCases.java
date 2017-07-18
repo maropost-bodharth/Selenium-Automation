@@ -36,7 +36,7 @@ public class MaropostEmailSegmentsTestCases {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        driver.get("https://app.maropost.com/accounts/4/segments");
+        driver.get("");
 
     }
    
@@ -58,7 +58,7 @@ public class MaropostEmailSegmentsTestCases {
 
     	//login to application
 
-    	objLogin.loginToMaropostWebApp("jatin@maropost.com", "Maro123#");
+    	objLogin.loginToMaropostWebApp("", "");
     	
     	maroposttest.log(LogStatus.INFO, "Entering user email");
     	
