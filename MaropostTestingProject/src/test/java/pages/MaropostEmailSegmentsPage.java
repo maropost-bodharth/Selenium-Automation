@@ -61,35 +61,110 @@ public class MaropostEmailSegmentsPage {
         //Fill user name
 
         this.setUserEmail(strUserName);
-        
-        Thread.sleep(3000);
-        
+       
         //Fill password
 
         this.setUserPassword(strPasword);
 
-        Thread.sleep(3000);
-        
         //Click Login button
 
         this.clickLogin(); 
         
-        Thread.sleep(10000);
+        Thread.sleep(3000);
        
     }
     
     public void clickNewSegmentOption() throws InterruptedException{     
         
-    	WebElement element = driver.findElement(By.xpath("//*[@id=\"header\"]/div/ul/li[5]/a"));
+    	WebElement newSegment = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div[2]/div[2]/i"));
         
         Actions action = new Actions(driver);
  
-        action.moveToElement(element).build().perform();
+        action.moveToElement(newSegment).build().perform();
  
         WebElement menuOption = driver.findElement(By.linkText("New Segment"));
         
         menuOption.click();
-    
+        
+        WebElement segmentName = driver.findElement(By.id("segment_name"));
+        
+        segmentName.sendKeys("Automation Segment 00");
+        
+        Thread.sleep(1000);
+        
+        WebElement addNewRule = driver.findElement(By.linkText("Add new rule"));
+        
+        addNewRule.click();
+        
+        Thread.sleep(1000);
+        
+        WebElement saveSegment = driver.findElement(By.name("commit"));
+        
+        saveSegment.click();
+        
+        Thread.sleep(1000);
     }
     
+    public void clickEditSegmentOption() throws InterruptedException{     
+        
+    	WebElement segments = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div[1]/ul/li[3]/a"));
+        
+    	segments.click();
+    	
+    	Thread.sleep(2000);
+	
+    	WebElement editSegment = driver.findElement(By.cssSelector("a[title=\"Edit segment\"]"));
+    	
+    	editSegment.click();
+    	
+    	Thread.sleep(2000);
+    	
+    	WebElement editSegmentName = driver.findElement(By.id("segment_name"));
+    	
+    	editSegmentName.clear();
+        
+    	editSegmentName.sendKeys("Segment Edited");
+        
+        Thread.sleep(1000);
+    	
+    	driver.findElement(By.name("commit")).click();
+    	
+    	Thread.sleep(3000);
+    }
+    
+    public void clickDeleteSegmentOption() throws InterruptedException{     
+        
+    	WebElement segments = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div[1]/ul/li[3]/a"));
+        
+    	segments.click();
+    	
+    	Thread.sleep(2000);
+	
+    	WebElement deleteSegment = driver.findElement(By.cssSelector("a[title=\"Delete segment permanently\"]"));
+    	
+    	deleteSegment.click();
+    	
+    	driver.switchTo().alert().accept();
+    	
+    	Thread.sleep(2000);	
+    }
+    
+    public void clickDuplicateSegmentOption() throws InterruptedException{     
+        
+    	WebElement segments = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div[1]/ul/li[3]/a"));
+        
+    	segments.click();
+    	
+    	Thread.sleep(2000);
+	
+    	WebElement duplicateSegment = driver.findElement(By.cssSelector("a[title=\"Create a duplicate segment\"]"));
+    	
+    	duplicateSegment.click();
+    	
+    	Thread.sleep(2000);
+    	
+    	driver.findElement(By.name("commit")).click();
+    	
+    	Thread.sleep(3000);
+    }
 }

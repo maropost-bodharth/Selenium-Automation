@@ -36,7 +36,7 @@ public class MaropostEmailSegmentsTestCases {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        driver.get("");
+        driver.get("https://app.maropost.com/accounts/4/segments");
 
     }
    
@@ -58,7 +58,7 @@ public class MaropostEmailSegmentsTestCases {
 
     	//login to application
 
-    	objLogin.loginToMaropostWebApp("", "");
+    	objLogin.loginToMaropostWebApp("jatin@maropost.com", "Maro123#");
     	
     	maroposttest.log(LogStatus.INFO, "Entering user email");
     	
@@ -78,26 +78,116 @@ public class MaropostEmailSegmentsTestCases {
         
         }
 	}
-        @Test (dependsOnMethods = "test_verify_signin_section")
+	
+	// Test Case - 2 : To Create Segment
+	
+    @Test (dependsOnMethods = "test_verify_signin_section")
         
-        public void test_click_on_new_segment() throws InterruptedException{
+    public void test_to_create_on_new_segment() throws InterruptedException{
             
-        	maroposttest = extentreports.startTest("test_click_on_new_segment");
+        maroposttest = extentreports.startTest("test_to_create_on_new_segment");
         	
-            objLogin.clickNewSegmentOption();
+        objLogin.clickNewSegmentOption();
         	
-            maroposttest.log(LogStatus.INFO, "Click on new segment option under segments");
+        maroposttest.log(LogStatus.INFO, "Click on new segment option under segments");
             
-            Thread.sleep(3000);
+        maroposttest.log(LogStatus.INFO, "Enter Segment Name");
+            
+        maroposttest.log(LogStatus.INFO, "Add Rule & Click On Save Segment Button");
+           
+        WebElement msg = driver.findElement(By.cssSelector(".flash"));
+            
+        String actualresult = msg.getText();
+            
+        String expectedresult = "Segment was successfully created.";
+            
+        if(actualresult.equalsIgnoreCase(expectedresult)){
+            
+            maroposttest.log(LogStatus.PASS, "Actual Result ::  " + actualresult );
+        }
      }
-		
-        @AfterSuite (alwaysRun = true)
-		public void tearDown() throws Exception {
+    
+     // Test Case - 3 : To Edit Segment
+        
+     @Test (dependsOnMethods = "test_to_create_on_new_segment")
+            
+     public void test_to_edit_segment() throws InterruptedException{
+                
+        maroposttest = extentreports.startTest("test_to_edit_segment");
+            	
+        objLogin.clickEditSegmentOption();
+            	
+        maroposttest.log(LogStatus.INFO, "Click on edit option under segment");
+        
+        maroposttest.log(LogStatus.INFO, "Enter update details");
+              
+        maroposttest.log(LogStatus.INFO, "Segment was updated successfully");
+           
+        WebElement msg = driver.findElement(By.cssSelector(".flash"));
+        
+        String actualresult = msg.getText();
+        
+        String expectedresult = "Segment was successfully updated.";
+        
+        if(actualresult.equalsIgnoreCase(expectedresult)){
+        
+        	maroposttest.log(LogStatus.PASS, "Actual Result ::  " + actualresult );
+        }
+     }	
+      
+     // Test Case - 4 : To Delete Segment
+     
+     @Test (dependsOnMethods = "test_to_edit_segment")
+            
+     public void test_to_delete_segment() throws InterruptedException{
+                
+        maroposttest = extentreports.startTest("test_to_delete_segment");
+            	
+        objLogin.clickDeleteSegmentOption();
+            	
+        maroposttest.log(LogStatus.INFO, "Click on delete option under segment");
+        
+        maroposttest.log(LogStatus.INFO, "Click on confirm delete option ");
+              
+        maroposttest.log(LogStatus.INFO, "Segment was deleted successfully");
+     }	
+     
+     // Test Case - 5 : To Duplicate Segment
+     
+     @Test (dependsOnMethods = "test_to_delete_segment")
+            
+     public void test_to_duplicate_segment() throws InterruptedException{
+                
+        maroposttest = extentreports.startTest("test_to_duplicate_segment");
+            	
+        objLogin.clickDuplicateSegmentOption();
+            	
+        maroposttest.log(LogStatus.INFO, "Click on duplicate segment option under segment");
+             
+        maroposttest.log(LogStatus.INFO, "Segment was created successfully");
+        
+        WebElement msg = driver.findElement(By.cssSelector(".flash"));
+            
+        String actualresult = msg.getText();
+            
+        String expectedresult = "Segment was successfully created.";
+            
+        if(actualresult.equalsIgnoreCase(expectedresult)){
+            
+            maroposttest.log(LogStatus.PASS, "Actual Result ::  " + actualresult );
+        }
+     }	
+     
+     @AfterSuite (alwaysRun = true)
+     public void tearDown() throws Exception {
 	 
-	    	extentreports.endTest(maroposttest);
-	    	extentreports.flush();
-	    	//extent.close();
-	    	driver.quit();
+	   extentreports.endTest(maroposttest);
+	 
+	   extentreports.flush();
+	  	
+	   //extent.close();
+	   
+	   driver.quit();
 	  
 	} 
 
